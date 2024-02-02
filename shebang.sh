@@ -1,32 +1,9 @@
 #!/bin/bash
-# Update and install necessary packages without interactive prompts
-sudo DEBIAN_FRONTEND=noninteractive apt-get update -y && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip wget lsof build-essential gnupg software-properties-common python3-pip snapd
-
-# add a utility method for github
-cat << EOF >> ~/.bashrc
-alias gitpushmain="git branch -M main && git add . && git commit -am 'this' && git push -u origin main"
-EOF
-
-
-
-
-
-
-source ./cleanup.sh
-source ./variables.sh
-echo $NATS_SERVER_VERSION
-if [ ! -d "/usr/local/bin" ]; then
-  mkdir -p /usr/local/bin
-fi
-# install nex prerequisites - nats go firecracker
-
-# install unzip
-apt install unzip 
-
-# add a utility method for github
-cat << EOF >> ~/.bashrc
-alias gitpushmain="git branch -M main && git add . && git commit -am 'this' && git push -u origin main"
-EOF
+# bash variables
+export NATS_SERVER_VERSION="2.10.9"
+export NATS_CLI_VERSION="0.1.1"
+export GOLANG_VERSION="1.21.6"
+export ARCH="$(uname -m)"
 
 #download nats-server unzip and cp to /usr/local/bin
 curl -L https://github.com/nats-io/nats-server/releases/download/v"${NATS_SERVER_VERSION}"/nats-server-v"${NATS_SERVER_VERSION}"-linux-amd64.zip -o nats-server.zip
@@ -52,20 +29,4 @@ cat << EOF >> ~/.bashrc
 export PATH=\$PATH:/usr/local/go/bin
 EOF
 
-# download and install firecracker
-ARCH="$(uname -m)"
-release_url="https://github.com/firecracker-microvm/firecracker/releases"
-latest=$(basename $(curl -fsSLI -o /dev/null -w  %{url_effective} ${release_url}/latest))
-curl -L ${release_url}/download/${latest}/firecracker-${latest}-${ARCH}.tgz \
-| tar -xz
-mv release-${latest}-$(uname -m)/firecracker-${latest}-${ARCH} firecracker
-mv firecracker /usr/local/bin
-
-# clone nex repo
-git clone https://github.com/synadia-io/nex.git nex-repo
-
 source ~/.bashrc
-
-
-
-
