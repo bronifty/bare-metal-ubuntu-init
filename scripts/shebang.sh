@@ -5,10 +5,6 @@ echo $NATS_SERVER_VERSION
 if [ ! -d "/usr/local/bin" ]; then
   mkdir -p /usr/local/bin
 fi
-# install nex prerequisites - nats go firecracker
-
-# install unzip
-apt install unzip 
 
 # add a utility method for github
 cat << EOF >> ~/.bashrc
@@ -38,18 +34,6 @@ rm go"${GOLANG_VERSION}".linux-amd64.tar.gz
 cat << EOF >> ~/.bashrc
 export PATH=\$PATH:/usr/local/go/bin
 EOF
-
-# download and install firecracker
-ARCH="$(uname -m)"
-release_url="https://github.com/firecracker-microvm/firecracker/releases"
-latest=$(basename $(curl -fsSLI -o /dev/null -w  %{url_effective} ${release_url}/latest))
-curl -L ${release_url}/download/${latest}/firecracker-${latest}-${ARCH}.tgz \
-| tar -xz
-mv release-${latest}-$(uname -m)/firecracker-${latest}-${ARCH} firecracker
-mv firecracker /usr/local/bin
-
-# clone nex repo
-git clone https://github.com/synadia-io/nex.git nex-repo
 
 source ~/.bashrc
 

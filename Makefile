@@ -4,7 +4,7 @@
 all: clean check vim make_executable init nex preflight nats build test compile run devrun
 
 # Make everything executable
-make_executable:
+executable:
 	chmod -R +x .
 
 # Run the init script to install prerequisites
@@ -24,6 +24,5 @@ check:
 
 vim:
 	./scripts/vim.sh
-
 
 .PHONY: all clean check vim make_executable init nex preflight nats build test compile run devrun
