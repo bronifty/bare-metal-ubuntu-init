@@ -12,6 +12,6 @@ source ~/.bashrc
 # setup github and ssh key (automatically without user interaction, using default file location, no passphrase)
 git config --global user.name "bronifty"
 git config --global user.email "bronifty@gmail.com"
-echo -e "\n\n\n" | sudo ssh-keygen -t rsa -b 4096 -C "bronifty@gmail.com" -N ""
+ssh-keygen -t rsa -b 4096 -C "bronifty@gmail.com" -N ""
 
 
