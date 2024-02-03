@@ -1,1 +1,2 @@
-vim /root/.bashrc
+#!/bin/bash
+sudo vim ~/.bashrc
