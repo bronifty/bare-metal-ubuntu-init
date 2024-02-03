@@ -1,10 +1,10 @@
 #!/bin/bash
 source variables.sh
 
-rm -rf $(dirname $(which firecracker))
-rm -rf $(dirname $(which nats-server))
-rm -rf $(dirname $(which nats))
-rm -rf $(dirname $(which go))
-rm -rf $(dirname $(which nex))
+sudo rm -rf $(dirname $(which firecracker))
+sudo rm -rf $(dirname $(which nats-server))
+sudo rm -rf $(dirname $(which nats))
+sudo rm -rf $(dirname $(which go))
+sudo rm -rf $(dirname $(which nex))
 
 

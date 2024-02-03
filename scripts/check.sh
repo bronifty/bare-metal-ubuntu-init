@@ -1,4 +1,4 @@
-which firecracker
+#!/bin/bash
 which nats-server
 which nats
 which go
