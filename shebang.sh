@@ -34,6 +34,6 @@ sudo rm nats-cli.deb
 curl -fsSL https://fnm.vercel.app/install | bash
 
 
-
+#
 
 
