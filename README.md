@@ -52,3 +52,23 @@ sudo auto-cpufreq --stats
 - [kevin hoffman nex demo](https://youtu.be/EfxtiKMnoyQ?si=43tlix2Urrw2F7w8)
 - [synadia nats nex docs](https://docs.nats.io/using-nats/nex/getting-started/deploying-services)
 
+# Settings
+
+```bash
+gnome-system-monitor
+nautilus /home/bro/codes/
+```
+
+### Hotkeys
+
+- open terminal
+> ctrl + alt + t 
+
+
+### Commands
+
+- copy ssh key
+```bash
+cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
+```
+

@@ -27,12 +27,7 @@ sudo dpkg -i nats-cli.deb
 # cleanup nats client
 sudo rm nats-cli.deb
 
-# fnm
-curl -fsSL https://fnm.vercel.app/install | bash
 
-# git-lfs
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo DEBIAN_FRONTEND=noninteractive apt-get install git-lfs=3.4.0
 
 # aws cli
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -67,6 +62,11 @@ echo \
 sudo DEBIAN_FRONTEND=noninteractive apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo docker run hello-world
 
+# git-lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo DEBIAN_FRONTEND=noninteractive apt-get install git-lfs=3.4.0
 
+# fnm
+curl -fsSL https://fnm.vercel.app/install | bash
 
 

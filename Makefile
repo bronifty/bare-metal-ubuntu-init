@@ -5,7 +5,10 @@ executable:
 	chmod -R +x .
 
 init:
-	./init.sh
+	./scripts/init.sh
+
+go:
+	./scripts/go.sh
 
 shebang:
 	./shebang.sh
