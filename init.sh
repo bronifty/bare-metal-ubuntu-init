@@ -1,6 +1,6 @@
 #!/bin/bash
 # Update and install necessary packages without interactive prompts
-sudo DEBIAN_FRONTEND=noninteractive apt-get update -y && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y git unzip wget lsof build-essential gnupg software-properties-common python3-pip snapd curl xclip
+sudo DEBIAN_FRONTEND=noninteractive apt-get update -y && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y git curl unzip wget lsof htop build-essential gnupg software-properties-common python3-pip snapd xclip && sudo snap install auto-cpufreq && sudo auto-cpufreq --install
 
 # add a utility method for github
 cat << EOF >> ~/.bashrc
