@@ -13,8 +13,6 @@ EOF
 
 source ~/.bashrc
 
-
-
 # #download nats-server unzip and cp to /usr/local/bin
 curl -L https://github.com/nats-io/nats-server/releases/download/v"${NATS_SERVER_VERSION}"/nats-server-v"${NATS_SERVER_VERSION}"-linux-amd64.zip -o nats-server.zip
 sleep 1
@@ -29,15 +27,12 @@ sudo dpkg -i nats-cli.deb
 # cleanup nats client
 sudo rm nats-cli.deb
 
-
 # fnm
 curl -fsSL https://fnm.vercel.app/install | bash
 
-
-#
 # git-lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install git-lfs=3.4.0
+sudo DEBIAN_FRONTEND=noninteractive apt-get install git-lfs=3.4.0
 
 # aws cli
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -46,7 +41,7 @@ sudo ./aws/install
 rm -rf awscliv2.zip ./aws/
 
 # terraform
-sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+sudo DEBIAN_FRONTEND=noninteractive apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg software-properties-common
 wget -O- https://apt.releases.hashicorp.com/gpg | \
 gpg --dearmor | \
 sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
@@ -56,12 +51,11 @@ gpg --no-default-keyring \
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
 https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
 sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update
-sudo apt-get install terraform
+sudo DEBIAN_FRONTEND=noninteractive apt update && sudo DEBIAN_FRONTEND=noninteractive apt-get install terraform
 terraform -help
 
 # docker
-sudo apt-get install \
+sudo DEBIAN_FRONTEND=noninteractive apt-get install \
     ca-certificates \
     curl \
     gnupg \
@@ -70,8 +64,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo DEBIAN_FRONTEND=noninteractive apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo docker run hello-world
 
 
