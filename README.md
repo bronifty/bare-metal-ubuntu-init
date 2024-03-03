@@ -48,6 +48,7 @@ sudo auto-cpufreq --install
 sudo auto-cpufreq --stats
 ```
 
-[kevin hoffman nex demo](https://youtu.be/EfxtiKMnoyQ?si=43tlix2Urrw2F7w8)
-[synadia nats nex docs](https://docs.nats.io/using-nats/nex/getting-started/deploying-services)
+### Nex Server 
+- [kevin hoffman nex demo](https://youtu.be/EfxtiKMnoyQ?si=43tlix2Urrw2F7w8)
+- [synadia nats nex docs](https://docs.nats.io/using-nats/nex/getting-started/deploying-services)
 
