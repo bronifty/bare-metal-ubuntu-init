@@ -7,6 +7,9 @@ all: clean check vim make_executable init nex preflight nats build test compile 
 executable:
 	chmod -R +x .
 
+init:
+	./init.sh
+
 shebang:
 	./shebang.sh
 
