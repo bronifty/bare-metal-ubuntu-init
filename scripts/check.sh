@@ -1,12 +1,10 @@
-#!/bin/bash
-source ./variables.sh
-source ./script_dir.sh
-
-which nats-server
-which nats
 which go
+which nats
+which nats-server
+which aws
 which terraform
 which docker
-
+which git-lfs
+which fnm
 # cat /root/.bashrc
 

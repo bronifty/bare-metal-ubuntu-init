@@ -1,10 +1,6 @@
-#!/bin/bash
-source ./variables.sh
-source ./script_dir.sh
-
-sudo rm -rf $(dirname $(which nats-server))
-sudo rm -rf $(dirname $(which nats))
 sudo rm -rf $(dirname $(which go))
+sudo rm -rf $(dirname $(which nats))
+sudo rm -rf $(dirname $(which nats-server))
 sudo rm -rf $(dirname $(which aws))
 sudo rm -rf $(dirname $(which terraform))
 sudo rm -rf $(dirname $(which docker))
