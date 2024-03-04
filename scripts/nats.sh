@@ -5,7 +5,10 @@ source ./variables.sh
 go install github.com/nats-io/nats-server/v2@latest
 
 cat << EOF >> ~/.bashrc
-export GOPATH=/home/bro/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=\$(echo $(go env GOPATH))
+export PATH=\$PATH:\$GOPATH/bin
 EOF
+
+
+
 
