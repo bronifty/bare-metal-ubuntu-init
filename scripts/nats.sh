@@ -1,6 +1,11 @@
 #!/bin/bash
-source ./variables.sh
-source ./script_dir.sh
+
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+# Source the scripts using the script directory path
+source "$SCRIPT_DIR/variables.sh"
+
 
 # nats-server-v2.11.0-preview.1-386.deb 
 go install github.com/nats-io/nats-server/v2@latest

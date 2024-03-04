@@ -1,12 +1,11 @@
 #!/bin/bash
-source ./variables.sh
-source ./script_dir.sh
 
-# # Determine the directory where the script is located
-# SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-# # Navigate to the script's directory
-# cd "$SCRIPT_DIR"
+# Source the scripts using the script directory path
+source "$SCRIPT_DIR/variables.sh"
+
 
 # # aws cli
 # curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
