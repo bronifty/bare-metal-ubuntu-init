@@ -1,13 +1,14 @@
 #!/bin/bash
 source ./variables.sh
+source ./script_dir.sh
 
 # nats-server-v2.11.0-preview.1-386.deb 
 go install github.com/nats-io/nats-server/v2@latest
 
-cat << EOF >> ~/.bashrc
-export GOPATH=\$(echo $(go env GOPATH))
-export PATH=\$PATH:\$GOPATH/bin
-EOF
+# cat << EOF >> ~/.bashrc
+# export GOPATH=\$(echo $(go env GOPATH))
+# export PATH=\$PATH:\$GOPATH/bin
+# EOF
 
 # download and install nats client
 curl -fsSL -o nats-cli.deb https://github.com/nats-io/natscli/releases/download/v"${NATS_CLI_VERSION}"/nats-"${NATS_CLI_VERSION}"-amd64.deb 

@@ -1,4 +1,7 @@
 #!/bin/bash
+source ./variables.sh
+source ./script_dir.sh
+
 # Update and install necessary packages without interactive prompts
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -y && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y git curl unzip wget vim lsof htop build-essential gnupg software-properties-common python3-pip snapd xclip && sudo snap install auto-cpufreq && sudo auto-cpufreq --install
 

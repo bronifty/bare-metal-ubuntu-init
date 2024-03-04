@@ -1,5 +1,5 @@
 # Makefile
-all: executable init shebang clean check vim 
+all: executable init softwares clean check vim 
 
 executable:
 	chmod -R +x .
@@ -13,8 +13,11 @@ go:
 nats:
 	./scripts/nats.sh
 
-shebang:
-	./shebang.sh
+aws:
+	./scripts/aws.sh
+	
+softwares:
+	./scripts/softwares.sh
 
 clean:
 	./scripts/clean.sh
@@ -25,4 +28,4 @@ check:
 vim:
 	./scripts/vim.sh
 
-.PHONY: all executable init shebang clean check vim 
+.PHONY: all executable init softwares clean check vim 
