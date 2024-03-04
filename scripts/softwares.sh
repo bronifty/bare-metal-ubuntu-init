@@ -2,17 +2,17 @@
 source ./variables.sh
 source ./script_dir.sh
 
-# Determine the directory where the script is located
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# # Determine the directory where the script is located
+# SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-# Navigate to the script's directory
-cd "$SCRIPT_DIR"
+# # Navigate to the script's directory
+# cd "$SCRIPT_DIR"
 
-# aws cli
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo DEBIAN_FRONTEND=noninteractive ./aws/install
-sudo DEBIAN_FRONTEND=noninteractive rm -rf awscliv2.zip ./aws/
+# # aws cli
+# curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+# unzip awscliv2.zip
+# sudo DEBIAN_FRONTEND=noninteractive ./aws/install
+# sudo DEBIAN_FRONTEND=noninteractive rm -rf awscliv2.zip ./aws/
 
 # Navigate back to the original directory if needed
 # cd -
