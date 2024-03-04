@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Determine the directory where the script is located
+# Get the directory where the script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-# Navigate to the script's directory
-cd "$SCRIPT_DIR"
+# Source the scripts using the script directory path
+source "$SCRIPT_DIR/variables.sh"
+source "$SCRIPT_DIR/script_dir.sh"
+
+# Rest of your script...

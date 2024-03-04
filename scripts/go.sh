@@ -1,6 +1,10 @@
 #!/bin/bash
-source ./variables.sh
-source ./script_dir.sh
+
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+# Source the scripts using the script directory path
+source "$SCRIPT_DIR/variables.sh"
 
 # # download and install go
 curl -fsSL -o go"${GOLANG_VERSION}".linux-amd64.tar.gz https://go.dev/dl/go"${GOLANG_VERSION}".linux-amd64.tar.gz
@@ -10,7 +14,7 @@ sudo rm go"${GOLANG_VERSION}".linux-amd64.tar.gz
 
 cat << EOF >> ~/.bashrc
 export PATH=\$PATH:/usr/local/go/bin
-export GOPATH=\$(echo $(go env GOPATH))
+export GOPATH=\$(echo \$(go env GOPATH))
 export PATH=\$PATH:\$GOPATH/bin
 EOF
 
