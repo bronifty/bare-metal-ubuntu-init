@@ -19,6 +19,9 @@ aws:
 softwares:
 	./scripts/softwares.sh
 
+nex:
+	./scripts/nex.sh
+
 clean:
 	./scripts/clean.sh
 
