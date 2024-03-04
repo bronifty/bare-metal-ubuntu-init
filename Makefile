@@ -10,6 +10,9 @@ init:
 go:
 	./scripts/go.sh
 
+nats:
+	./scripts/nats.sh
+
 shebang:
 	./shebang.sh
 
