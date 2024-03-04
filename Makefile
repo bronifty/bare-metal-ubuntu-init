@@ -1,5 +1,5 @@
 # Makefile
-all: executable init go nats aws softwares nex clean check vim
+all: executable init go nats aws softwares nex clean check vim cpufreq
 
 executable:
 	chmod -R +x .
@@ -31,4 +31,7 @@ check:
 vim:
 	./scripts/vim.sh
 
-.PHONY: all executable init go nats aws softwares nex clean check vim
+cpufreq:
+	./scripts/cpufreq.sh
+
+.PHONY: all executable init go nats aws softwares nex clean check vim cpufreq
