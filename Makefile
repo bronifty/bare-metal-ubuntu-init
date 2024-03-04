@@ -1,5 +1,5 @@
 # Makefile
-all: executable init softwares clean check vim 
+all: executable init go nats aws softwares nex clean check vim
 
 executable:
 	chmod -R +x .
@@ -31,4 +31,4 @@ check:
 vim:
 	./scripts/vim.sh
 
-.PHONY: all executable init softwares clean check vim 
+.PHONY: all executable init go nats aws softwares nex clean check vim
