@@ -1,5 +1,5 @@
 # Makefile
-all: executable init go nats aws softwares nex clean check vim cpufreq sshkey
+all: executable init go nats aws softwares nex clean check vim cpufreq sshkey docker
 
 executable:
 	chmod -R +x .
@@ -40,4 +40,4 @@ cpufreq:
 sshkey:
 	./scripts/sshkey.sh
 
-.PHONY: all executable init go nats aws softwares nex clean check vim cpufreq sshkey
+.PHONY: all executable init go nats aws softwares nex clean check vim cpufreq sshkey docker
