@@ -57,4 +57,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install git-lfs=3.4.0
 # fnm
 curl -fsSL https://fnm.vercel.app/install | bash
 
+# deno
+curl -fsSL https://deno.land/install.sh | sh
 
+# bun
+curl -fsSL https://bun.sh/install | bash 
