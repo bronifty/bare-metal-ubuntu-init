@@ -22,6 +22,9 @@ softwares:
 nex:
 	./scripts/nex.sh
 
+docker: 
+	./scripts/docker.sh
+
 clean:
 	./scripts/clean.sh
 
