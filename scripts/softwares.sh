@@ -60,5 +60,17 @@ curl -fsSL https://fnm.vercel.app/install | bash
 # deno
 curl -fsSL https://deno.land/install.sh | sh
 
+cat << EOF >> ~/.bashrc
+
+# deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH=$DENO_INSTALL/bin:$PATH
+
+EOF
+
+source ~/.bashrc
+
 # bun
-curl -fsSL https://bun.sh/install | bash 
+curl -fsSL https://bun.sh/install | bash
+# bun add -d @types/bun  
+
