@@ -22,13 +22,13 @@ git restore --source=HEAD --staged --worktree .obsidian/workspace.json
 14. git add file02 # add file02 to staging area on cpu01
 15. git commit -m "message" # commit file02 to main branch on cpu01
 16. git push -u origin main # push to remote from cpu01 causing merge conflict which must be resolved with fetch, checkout, merge, and restore
-13. git fetch origin main # fetch main branch from origin remote on cpu01
-14. git checkout main # switch to local main branch on cpu01 to merge with remote-tracking branch origin/main which was just fetched from the remote
-15. git merge origin/main # merge the remote-tracking branch origin/main into the local main branch on cpu01 which will cause a merge conflict with file02
-16. git restore --source=origin/main --staged --worktree -- git/file02 # resolve merge conflict by overwriting the index and working tree with the latest commit on the remote-tracking branch origin/main (the last -- before the filename is a delimiter to separate the options from the filename)
-17. git add file02 # add file02 to staging area on cpu01
-18. git commit -m "message" # commit the merge resolution to main branch on cpu01
-19. git push -u origin main # push to remote from cpu01 
+17. git fetch origin main # fetch main branch from origin remote on cpu01
+18. git checkout main # switch to local main branch on cpu01 to merge with remote-tracking branch origin/main which was just fetched from the remote
+19. git merge origin/main # merge the remote-tracking branch origin/main into the local main branch on cpu01 which will cause a merge conflict with file02
+20. git restore --source=origin/main --staged --worktree -- git/file02 # resolve merge conflict by overwriting the index and working tree with the latest commit on the remote-tracking branch origin/main (the last -- before the filename is a delimiter to separate the options from the filename)
+21. git add file02 # add file02 to staging area on cpu01
+22. git commit -m "message" # commit the merge resolution to main branch on cpu01
+23. git push -u origin main # push to remote from cpu01 
 
 
 # Next steps (if necessary)
