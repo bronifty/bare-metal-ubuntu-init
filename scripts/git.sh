@@ -29,7 +29,8 @@ git restore --source=HEAD --staged --worktree .obsidian/workspace.json
 21. git add file02 # add file02 to staging area on cpu01
 22. git commit -m "message" # commit the merge resolution to main branch on cpu01
 23. git push -u origin main # push to remote from cpu01 
-
+24. echo "reset" > file03 && git add file03 && git commit -m "commit to reset softly" 
+25. git reset --soft HEAD~1 # reset to previous commit
 
 # Next steps (if necessary)
 # Resolve any merge conflicts that may arise during the merge.
